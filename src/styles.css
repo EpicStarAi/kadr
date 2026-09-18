@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0c0c0d;
+  --color-surface: #141415;
+  --color-surface-2: #1b1b1d;
+  --color-surface-3: #242426;
+  --color-fg: #f2f0eb;
+  --color-muted: #8b8a86;
+  --color-subtle: #5c5b58;
+  --color-border: #2c2c2e;
+  --color-stamp: #c44738;
+  --color-stamp-dim: #8f3429;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Oswald", "Arial Narrow", ui-sans-serif, sans-serif;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow-border: 0 0 0 1px rgb(255 255 255 / 0.08);
+  --shadow-border-hover: 0 0 0 1px rgb(255 255 255 / 0.14);
+  --shadow-well: inset 0 0 0 1px rgb(255 255 255 / 0.05), 0 24px 48px rgb(0 0 0 / 0.35);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-quick: 150ms;
+  --motion-fast: 250ms;
+  --motion-slow: 400ms;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  input[type="range"] {
+    accent-color: var(--color-fg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
